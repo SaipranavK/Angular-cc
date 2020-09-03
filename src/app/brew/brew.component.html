@@ -1,0 +1,15 @@
+<h1>Breweries</h1>
+<hr>
+<div class="container" *ngIf="brews">
+    <div class="row">
+        <div class="col-md-6 col-12" *ngFor="let brew of brews">
+            <div class="card">
+                <div class="card-body">
+                    <p><b>{{ brew.name }}</b><br>{{brew.country}}</p>            
+                    <a target="_blank" href="{{brew.website_url}}" class="site">Site</a>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>

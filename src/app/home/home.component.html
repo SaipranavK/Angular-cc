@@ -1,0 +1,28 @@
+<h1> Welcome </h1>
+<hr>   
+<div class="container" style="border: solid 1px;">
+    <p class="mt-3 mb-3">You have clicked <button class="btn btn-primary btn-sm" (click)="countClick()">this</button> {{ clickCounter }} times.</p>
+
+</div> 
+<br>
+<div class="container" style="border: solid 1px;">
+    <p class="mt-3 mb-3">
+        <input type="text" class="form-control" [(ngModel)]="name">
+        <br>
+        <strong>You said: {{ name }}</strong>
+    </p>
+</div>
+<br>
+<div class="container" style="border: solid 1px;" [ngStyle]="{
+   'background-color': clickCounter > 4 ? 'yellow' : 'lightgray',
+   'border': clickCounter > 4 ? '4px solid black' : 'none'
+}">
+    <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
+        <p class="mt-3 mb-3"> The click counter is greater than 4</p>
+    </ng-template>
+
+    <ng-template #none>
+        <p class="mt-3 mb-3"> The click counter is not greater than 4</p>
+    </ng-template>
+
+</div>
